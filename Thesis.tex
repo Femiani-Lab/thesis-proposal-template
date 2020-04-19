@@ -1,0 +1,147 @@
+\documentclass[12pt, oneside]{book2}
+
+\usepackage{amssymb, amsmath, amscd, graphicx, fullpage, epstopdf, appendix, hyperref, color, subfig, setspace, tensor, url, verbatim}
+
+\hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black, linktocpage}
+
+\onehalfspacing
+
+\begin{document}
+\thispagestyle{empty}
+\singlespacing
+
+\begin{center}
+ABSTRACT
+
+\vspace{2.0cm}
+
+YOUR TITLE HERE - ALL CAPITAL LETTERS, USE SECOND LINE \\IF NEEDED, NO BOLD
+
+\vspace{1.0cm}
+
+by Your Full Name
+
+\vspace{1.0cm}
+\end{center}
+
+\noindent Insert your abstract here, with no indentation, and it must be a maximum of 200 words. Keep the spacing as is (single spaced). It must be one paragraph.
+
+\newpage
+
+\thispagestyle{empty}
+
+\frontmatter
+
+\doublespacing
+
+\begin{titlepage}
+\begin{center}
+YOUR TITLE HERE ALL CAPS; NO BOLD - \\USE SECOND LINE IF NEEDED-CENTERED 
+
+
+\vspace{1.5cm}
+
+A Thesis (or Thesis Proposal) \\
+
+\vspace{0.5cm}
+
+Submitted to the \\
+Faculty of Miami University \\
+in partial fulfillment of \\
+the requirements for the degree of \\
+Master of Science \\
+by \\
+Your Full Name \\
+Miami University \\
+Oxford, Ohio \\
+201X (current Year)
+
+\vspace{1.5cm}
+
+Advisor: Your Advisor's Name\\
+Reader: Your First Reader's Name\\
+Reader: Your Second Reader's Name\\
+
+
+\vspace{1.5cm}
+
+\textcopyright Current Year Your Full Name
+
+\newpage
+
+This Thesis titled
+
+\vspace{1.0cm}
+
+INSERT THE TITLE OF YOUR DOCUMENT ALL CAPS \\SECOND LINE OF YOUR TITLE IF NEEDED
+
+\vspace{1.0cm}
+
+by
+
+\vspace{1.0cm}
+
+Your Full Name
+
+\vspace{1.0cm}
+
+has been approved for publication by\\
+\vspace{0.75cm}
+The College of Engineering and Computing\\
+\vspace{0.5cm}
+and\\
+\vspace{0.5cm}
+The Department of Computer Science \& Software Engineering\\
+
+\vspace{1.5cm}
+
+\rule[-0.1cm]{8cm}{0.01cm} \\
+Advisor's Name \\
+\vspace{1.0cm}
+\rule[-0.1cm]{8cm}{0.01cm} \\
+First Reader \\
+\vspace{1.0cm}
+\rule[-0.1cm]{8cm}{0.01cm} \\
+Second Reader \\
+\end{center}
+\thispagestyle{empty}
+\end{titlepage}
+
+\singlespacing
+\setcounter{page}{3}
+\tableofcontents
+\setcounter{tocdepth}{2}
+\cleardoublepage
+% \phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\newpage
+
+\chapter{Acknowledgements}
+
+\noindent Add your acknowledgements here.
+
+\mainmatter
+
+\include{Chapters/Chapter1_Introduction}
+\include{Chapters/Chapter2_Background}
+\include{Chapters/Chapter3_Overview}
+\include{Chapters/Chapter4_ContentA}
+\include{Chapters/Chapter5_ContentB}
+\include{Chapters/Chapter6_ContentC}
+\include{Chapters/Chapter7_Validation}
+\include{Chapters/Chapter8_Conclusion}
+
+\appendix
+\include{Appendices/A1}
+
+\backmatter
+
+\bibliographystyle{unsrt}
+\addcontentsline{toc}{chapter}{References}
+\bibliography{Thesis}
+\end{document}
