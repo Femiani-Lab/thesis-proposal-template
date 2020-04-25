@@ -1,11 +1,133 @@
-\chapter{Content A}
+\chapter{A Lightly Edited Version of a Submitted Conference or Journal Paper}
+\label{chap:APaper}
 
-Use this chapter to discuss the main content of your thesis contributions.
+\begin{quote}
+    This is an abstract for the chapter. Explain that this chapter was submitted for publication but do not say where unless it is accepted. Include the abstract of the submitted paper in this quote.
 
-You may have several of these chapters depending on your thesis - work with your advisor to determine chapter layouts. Remove or add as necessary.
+    Put the paper abstract in a second paragraph.
+\end{quote}
 
-\section{Sub-Topic 1}
-\subsection{Sub-Sub-Topic I}
-\subsection{Sub-Sub-Topic II}
-\section{Sub-Topic 2}
-\section{Sub-Topic 3}
+
+\section{Introduction}
+
+Ordinarily, it is a good idea to adhere to the \gls{dry} principle. However, it is acceptable to somewhat repeat your introduction in this chapter.
+The important thing is that your thesis introduction in \autoref{chap:introduction} should target a different audience. This introduction is aimed at experts in your field, or for people who have read and understood \autoref{chap:background}, whereas \autoref{chap:introduction} is for people who are new to your disciplines, such as third-year computer science students.
+
+Consider Y, Z, W, ... all of those could be done better if  X. Some people have done this or that but none have sufficiently addressed X.  We propose to solve X by some different approach.
+
+\subsection{Contributions}
+We make the following contributions:
+\begin{enumerate}
+    \item Copy from \autoref{chap:introduction}.
+    \item Copy from \autoref{chap:introduction}.
+    \item Copy from \autoref{chap:introduction}.
+\end{enumerate}
+
+\section{Prior Art}\label{sec:prior-art}
+This is a \textit{defense} of the \textit{novelty} of your contributions and not a tutorial.
+Categorize or group methods that seem to solve a similar problem to yours, then explain why yours is still novel. It is written to convince the reader that your approach is distinct from all others.
+
+\section{Description Of Approach}
+Describe your approach in detail.
+
+
+You may break this up into multiple chapters.
+
+
+This is where you cite methods you \textit{build} on rather than the methods you compete with.
+You should definitely have:
+\begin{itemize}
+    \item An overview figure. Show a pipeline or similar that visually displays the input, key stages of your method, and the output (if such a figure is appropriate).
+    \item Pseudocode if possible. Use the \texttt{clrs-code} package. Your description should be specific enough that someone can regenerate code that solves your problem.
+    \item You likely want to break it into multiple figures of algorithms
+    \item You may put mathematical proofs here, or formal definitions.
+\end{itemize}
+\section{Evaluation}
+Describe the process used to evaluate your approach.
+Sometimes it is more appropriate to interleave discussions of experiments with their results, and sometimes it is more appropriate to have a separate section such as \autoref{sec:results} to present all of the results in one place. The difference is that this section explains the experimental procedures and the latter section presents the results and tells you how to interpret them.
+
+We first describe the data used in our experiments. Then, we describe the process used to determine the validity of our approach. We use an ablation study in which a baseline method is described, and then each modification we propose is tested in order to show that it improves {\color{red} whatever metric is relevant}.  Finally, we compare our results against the state of the art.
+
+\subsection{Data}
+Which data will you use. How did you obtain it? How can other people obtain it? Why did you choose it? Show me some examples.
+
+\subsection{Validation}
+Compare different versions of your solutions. Describe an ablation study, or a grid search.  In your approach you likely had some parameters that would change the performance. Was there a threshold somewhere? Or a weight? Describe experiments that you did to determine the value of those (results will be described in \autoref{sec:results},  unless you choose to combine that with this section, which is fine).
+
+\subsection{Comparison to Prior Art}
+
+Compare the best version of your solution to other methods.
+
+
+\section{Results}
+\label{sec:results}
+This may be combined and interleaved with the previous section.
+
+Show the figures from the different experiments describe above here.
+
+Explain where your methods is most successful, explain the expected results, explain the modes of failure for your method (do not hide these).
+
+
+
+
+% Use https://www.tablesgenerator.com/
+\begin{table}[htbp]
+    \centering
+    \begin{threeparttable}
+        \caption[Short Title for List of Table]{Ablation Study}
+        \label{tab:results:ablation}
+        \begin{tabular}{@{}lllll@{}}
+            \toprule
+             \multicolumn{3}{c}{Model} & \multicolumn{2}{c}{Metric} \\
+            Modification 1  & Modification 2 & Modification 3 & Metric 1 & Metric 2\\ %\midrule
+             \cmidrule(lr){1-3} \cmidrule(lr){4-5}
+            no     & no        & x=1    & 1\%  & 1\%    \\
+            no     & no        & x=2    & 5\%  & 10\%    \\
+            no     & no        & x=3    & 15\%  & 40\%    \\
+            no     & yes       & x=3    & \textbf{45\%}  & 60\%    \\
+            yes    & yes        & x=3    & 42\%  &\textbf{100\%}    \\
+            \bottomrule
+        \end{tabular}
+        \begin{tablenotes}
+            \small
+            \item The highest value for each metric is indicated in bold.
+            \item If you explore all or a random set of values it is a grid search.
+            \item If you show only a path from the baseline to your proposed solution it is an ablation study.
+        \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+% Use https://www.tablesgenerator.com/
+\begin{table}[htbp]
+    \centering
+    \begin{threeparttable}
+        \caption[Short Title for List of Table]{Comparison of Methods}
+        \label{tab:results:comparison}
+        \begin{tabular}{@{}lllll@{}}
+            \toprule
+            Approach  & \multicolumn{2}{c}{Dataset 1} & \multicolumn{2}{c}{Dataset 2} \\
+             \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+                                  & Metric 1 & Metric 2 & Metric 1 & Metric 2\\ \midrule
+            Method A~\cite{sample2019}     & --       & --        & --        & --        \\
+            Method B~\cite{sample2019}     & --       & --        & --        & --        \\
+            Method C~\cite{sample2019}     & --       & --       & --        & --        \\
+            Ours     & \textbf{--}       & \textbf{--}       & \textbf{-- }       & \textbf{-- }       \\
+            Ours (var)  & \textbf{--}       & \textbf{--}       & \textbf{-- }       & \textbf{-- }       \\
+            \bottomrule
+        \end{tabular}
+        \begin{tablenotes}
+            \small
+            \item The highest value for each metric is indicated in bold.
+            \item We show two variants of our method.
+            \item This is where authors provide additional information about
+            the data, including whatever notes are needed.
+            \item It is good for Dr. Femiani, who does not read the text first.
+        \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+\section{Conclusion}
+
+Restate the introduction.
+Convince people write another paper that will cite this.
+

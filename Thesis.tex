@@ -1,12 +1,55 @@
-\documentclass[12pt, oneside]{book2}
+\documentclass[12pt, oneside]{book}
 
-\usepackage{amssymb, amsmath, amscd, graphicx, fullpage, epstopdf, appendix, hyperref, color, subfig, setspace, tensor, url, verbatim}
+\usepackage{amssymb}   % MAth symbols
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{graphicx}
+\usepackage{fullpage}
+\usepackage{epstopdf}
+\usepackage{appendix}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{subfig}
+\usepackage{setspace}
+\usepackage{tensor}
+\usepackage{url}
+\usepackage{verbatim}
+
 
 \hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black, linktocpage}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Femiani's preferred additional packages
+
+\usepackage{pgfgantt}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{lscape}
+\usepackage[flushleft]{threeparttable}
+\usepackage{physics}  % Typesetting for vectors and matrices
+
+% NOTE 1:  You need to install PERL on your system
+% NOTE 2:  You need to run makeglossaries (a perl script) before building if you want this to work!
+%  From the command line:
+%     makeglossaries Thesis
+%  From TexStudio:
+%     Press F9
+\usepackage[toc,acronym, symbols]{glossaries-extra} %  manage acronyms and new terms
+\makeglossaries
+\makeindex
+
+\preto\chapter{\glsresetall}  % Make sure that acronyms are expanded on first use in each chapter
+\setabbreviationstyle[acronym]{long-short}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \onehalfspacing
 
+% You should make liberal use of macros in your thesis.
+\input{macros}
+
+
 \begin{document}
+\pagenumbering{roman}
 \thispagestyle{empty}
 \singlespacing
 
@@ -36,7 +79,7 @@ by Your Full Name
 
 \begin{titlepage}
 \begin{center}
-YOUR TITLE HERE ALL CAPS; NO BOLD - \\USE SECOND LINE IF NEEDED-CENTERED 
+YOUR TITLE HERE ALL CAPS; NO BOLD - \\USE SECOND LINE IF NEEDED-CENTERED
 
 
 \vspace{1.5cm}
@@ -119,6 +162,7 @@ Second Reader \\
 \addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
 
+
 \newpage
 
 \chapter{Acknowledgements}
@@ -132,12 +176,18 @@ Second Reader \\
 \include{Chapters/Chapter3_Overview}
 \include{Chapters/Chapter4_ContentA}
 \include{Chapters/Chapter5_ContentB}
-\include{Chapters/Chapter6_ContentC}
-\include{Chapters/Chapter7_Validation}
+%\include{Chapters/Chapter6_ContentC}
+
+%% Dr Femiani says put validation in each chapter rather than once at the end
+%\include{Chapters/Chapter7_Validation}
+\
 \include{Chapters/Chapter8_Conclusion}
 
 \appendix
 \include{Appendices/A1}
+\include{Appendices/Milestones}
+
+\printglossaries
 
 \backmatter
 

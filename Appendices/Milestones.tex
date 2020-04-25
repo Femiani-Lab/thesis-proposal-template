@@ -1,0 +1,105 @@
+
+
+
+\chapter{Milestones}
+
+You should describe your \textit{realistic} plan to accomplish the work by the
+time you need to defend your thesis.
+Your plan must take into account that your advisor will need 5-10 days to review
+written work with you.  I wrote a
+\verb|\ganttwithfeedback{task}{start}{ready}{finish}|
+macro to use in for the Gantt chart in \autoref{fig:gantt}
+which renders a bar in the Gantt chart with the time you need to be ready for
+feedback indicated.  Depending on your advisor, they may prefer to meet with for
+a couple of sessions to review the work together, they may want a printed or PDF
+report which they will markup. You will need to allow time for a couple rounds
+of this for each task. \textbf{Do not ask for feedback on 60 pages of thesis all
+at once.}
+
+
+% See http://texdoc.net/texmf-dist/doc/latex/pgfgantt/pgfgantt.pdf
+
+\ganttset{calendar week text={\tiny \startday}}
+\def\ganttwithfeedback#1#2#3#4{\ganttbar{#1}{#2}{#3} \ganttbar[bar/.append style={fill=lightgray}]{}{#3}{#4}}
+\begin{figure}[h!]
+    \centering
+\begin{ganttchart}[
+    expand chart=6.5in,
+    hgrid,
+    vgrid= {*{6}{draw=none},dotted},  %Skip 6, draw every 7th line
+    x unit=0.5mm,
+    y unit chart=5mm,
+    time slot format=isodate,
+    time slot unit=day,
+    milestone/.append style={xscale=10},
+    bar top shift = 0.1, bar height = 0.8,
+   % inline,
+    milestone inline label node/.append style={left=2mm},
+    bar label font=\scriptsize,
+    milestone label font=\itshape\scriptsize,
+    today=2020-04-24
+    ]{2020-04-1}{2021-04-30}
+    \gantttitlecalendar{year, month=shortname} \\
+
+    % You can group tasks if you want to drill-down. This is probably
+    % a good thing if youcan plan it out that well.
+    %\ganttgroup{Group 1}{1}{7} \\
+
+    % This is  task that has multiple starts and stops
+    \ganttwithfeedback{Task 1}{2020-05-1}{2020-06-1}{2020-06-6}
+       \ganttwithfeedback{}{2020-08-1}{2020-10-1}{2020-10-6} \ganttnewline
+
+    \ganttbar{Task 2}{2020-06-1}{2020-07-1} \ganttnewline
+    \ganttbar{Task 3}{2020-06-1}{2020-07-1} \ganttnewline
+    \ganttbar{Task 4}{2020-06-1}{2020-07-1} \ganttnewline
+    \ganttbar{Task 5}{2020-06-1}{2020-07-1} \ganttnewline
+    \ganttbar{Task 6}{2021-03-15}{2021-04-1} \ganttnewline
+
+    \ganttmilestone{ Paper Sub.}{2021-01-1} \ganttnewline
+    \ganttmilestone{Format Check}{2021-4-16}\ganttnewline
+    \ganttmilestone{Committee}{2021-04-17} \ganttnewline
+    \ganttmilestone{Defense}{2021-04-24} \ganttnewline
+
+\end{ganttchart}
+\caption[Gantt chart for completion of the Thesis.]{
+    Gantt chart for completion of the Thesis. Work begins as soon as the proposal is accepted and continues for one year. Each gridline in the chart represents one week. The milestones are deadlines for paper submission in addition to deadlines imposed by the university. A task is only considered done after my advisor has reviewed \textit{and} approved it.}
+\label{fig:gantt}
+\end{figure}
+
+\section{Tasks}
+The thesis will include the following tasks:
+
+\subsection{Task 1: Experimental Setup}\label{milestone:experimental-setup}
+At this time you have collected data that will be needed to evaluate your approach. You should have identified competing methods that you will compare against. You should have their reported results that you can use to compare against them, or access to code so you can reproduce their work on your own data. If you cannot do either, you should have reached out to the authors see if they are willing to either run their method on data you provide or if they are willing to share code via email.
+
+In addition, you should have a \textit{happy} test case identified. That is, a simple version of the problem that is sufficient to illustrate the benefits of your approach. This should be clear and easy to understand example and may be artificial (it is for demonstrating the behavior not evaluation).  You will use this both for testing your own solution bit you will also refer to it frequently as an example in your explanation of your method.
+
+\subsection{Task 2: Baseline Implementation}
+At this time you should have code that runs on the \textit{Happy} test cases. You have not run experiments,but there is no additional \emph{major} implementation needed. Unless something goes wrong during experiments, you are ready to write-up a more detailed description of your approach. Bear in mind, you will discover things during your experiments that will require you to return to this later.
+
+
+
+\subsection{Task 3: Complete Experiments}
+At this time you have run your experiments. You have collected numerical and qualitative results and put them into figures and captions in your thesis. The tables and figures have long captions or notes (see \ref{tab:work-compared}) that explain how to interpret them.
+You have also kept track of any caveats or decisions you had to make in order to create the results.
+
+\subsection{Task 4: Describe Approach}
+You currently have a \textit{sketch} of your approach. You should have a written description that is complete enough that another person should be able to re-implement it. Your description must include both textual and visual representations of the approach. Visual-representations should include process diagrams or flow charts, and pseudo-code.  Then you need to describe your method with the same level of detail in text, referring back to the figures.
+
+\section{Milestones}
+\subsection{Milestone 1: Chapter submitted for publication}
+You should plan to submit a chapter for publication. Ideally this is done about 4-6 weeks before your format check. In this milestone you should say \textit{where} you plan to submit with contingencies.
+
+\subsection{Milestone 2: Format Check}
+The thesis will be sent to the to {\color{red} address to send to }  by {\color{red}  use the academic calendar }
+
+\subsection{Milestone 3: Thesis to Committee}
+The thesis will be sent to the committee by {\color{red} use the academic calendar and subtract 5? or more business days from anticipated defense }
+
+\subsection{Milestone 4: Thesis Defense}
+When do you plan to do your defense?
+
+
+
+
+% See http://www.martin-kumm.de/wiki/doku.php?id=05Misc:A_LaTeX_package_for_gantt_plots

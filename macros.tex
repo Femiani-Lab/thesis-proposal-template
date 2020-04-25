@@ -1,0 +1,80 @@
+% macros.tex
+
+%%%
+% This document contains maxcros used in your thesis.
+%
+% It is a VERY important that you use macros to establish your notation
+% In particular:
+%  1.  Use macros for acronyms -- to make sure they are expanded properly@
+%  2.  Use macros for jargon / terms in your field.
+%      This is important so you can use a spell-checker!
+%      It also is helpful if you change the way you render important words.
+%  3.  Use macros for math symbols and notation.
+%      - It is EXTREMELY common to change the names of variable or functions
+%        or set etc.
+%      - You WILL make mistakes if you just try to duplicate the same
+%        latex everywhere.
+
+%  This is just like codeing -- break the document up into manageable functions!!
+
+
+% Example: The expected value
+%  Renders as E[X] -- the expected value.
+\def\Expected[#1]{\ensuremath{\mathbb{E}\left[{#1}\right]}}
+
+% Just renders as n -- but I may want to change it to N or k or K later....
+\def\NumberOfRecords{\ensuremath{n}}
+
+% Puts a bulleted list item in a table
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+% Using the glossaries package to manage acronyms and jargon
+\newacronym{html}{HTML}{hypertext markup language}
+\newacronym{xml}{XML}{extensible markup language}
+\newacronym{css}{CSS}{cascading style sheet}
+
+\newacronym{dry}{DRY}{`don't repeat yourself'}
+\newacronym[see={apig}]  % Cross-reference to glossary
+    {api} % label with \gls{api},\glspl{api}, \Gls{api},\Glspl{api}
+    {API} % short form
+    {Application Programming
+        Interface\glsadd{apig}} % Use glsadd to force glossaryentry to shoew
+
+
+% Math symbols used
+\glsxtrnewsymbol[
+    see={real number},
+    description={The set of \glspl{real number}} % Description
+    % Other options can go here to....
+    ]
+    {real-number-symbol} % label
+    {$\mathbb{R}$}       % symbol
+
+% Jargon / Terms
+\newglossaryentry{apig}{
+    name={API},
+    see={api},
+    description={
+        An Application Programming Interface (API) is a particular set
+        of rules and specifications that a software program can follow to access and
+        make use of the services and resources provided by another particular software
+        program that implements that API
+        }
+}
+
+
+
+\newglossaryentry{real number}
+{
+    name={real number},
+    see={real-number-symbol},
+    description={Includes both rational numbers, such as $42$ and
+        $\frac{-23}{129}$, and irrational numbers,
+        such as $\pi$ and the square root of two; or,
+        a real number can be given by an infinite decimal
+        representation, such as $2.4871773339\ldots$ where
+        the digits continue in some way; or, the real
+        numbers may be thought of as points on an infinitely
+        long number line},
+    symbol={\ensuremath{\mathbb{R}}}
+}

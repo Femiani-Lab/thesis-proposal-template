@@ -1,9 +1,134 @@
 \chapter{Background \& Related Work}
+\label{chap:background}
 
+\section{Introduction}
+\label{sec:background:introducton}
 This section is where you will discuss relevant background work, and related works for comparison. Ensure that you cite references appropriately, using this as an example~\cite{sample2019}
+
+Dr. Femiani wants you to read examples of published literature reviews (Google for special journals deveoted to them).  Your aspiration or goal should be to write a lit. review as a standalone document that is capable of being published.
+
+ Some guidelines:
+
+\begin{enumerate}
+    \item  Put the \verb|\cite{}| as close as possible to the \emph{first} mention of the work.
+     \emph{Do not} put it at the end of the sentence, but instead put it right after you \emph{first} mention the work.
+
+     Do this:
+\begin{quote}
+         \verb|The FOO Method~\cite{authors} used whozits and whatsits to do stuff.|
+\end{quote}
+     and not this:
+    \begin{quote}
+         \verb|The FOO Method used whozits and whatsits to do stuff~\cite{authors}.|
+    \end{quote}
+   An exception is if you are using a quote -- but then you also have to
+   use quotes(!).
+
+   Also when possible provide a speak-able name for a paper in addition to
+   a citation. You can say
+   \begin{verbatim}
+  the method of \cite{authors} was blah blah
+   \end{verbatim}
+   but if I prefer to say
+\begin{verbatim}
+   the method of FOO~\cite{authors}.
+\end{verbatim}
+   This is controversial.
+
+\item  You can put multiple bibetex keys in one \verb|\cite{}|, and you should
+\item Use \verb|\cite[p.~150]{sample2019}| to cite a specific page.
+\item Always put citations in figure captions if you copy them
+\item But you should mostly make your own figures (except maybe when showing others' results in background section)
+\end{enumerate}
+
+Start by explaining:
+\begin{enumerate}
+
+    \item Why should I read this?
+    \begin{itemize}
+        \item Do you include new material not yet covered in a lit review?
+        \item Do you discover new connections between past work?
+        \item Do you cover it in a new way by giving a new interpretation?
+        \item Can you identify an emerging trend or anticipate future directions?
+        \item Do you identify gaps in the research that are ready to be explored? I hope so!
+    \end{itemize}
+    \item How did you select the topics to cover.
+    \item What is the criteria for something to be included
+    \item How is the chapter organized. Prefer to organise according to themes or methods as the demonstrates greater analytical abilities.
+\end{enumerate}
+
+
+
+\section{Overview}
+
+My preference is to use a figure such as a concept map to show how the work is connected. The figure includes sections numbers. Use InkScape (\url{https://inkscape.org/}) end export to PDF with LaTeX to make such a figure.
+ See the discription of how to do this\footnote{Putting SVG figuresinto \LaTeX{} is described at \url{http://tug.ctan.org/tex-archive/info/svg-inkscape/InkscapePDFLaTeX.pdf}.  }
+ In fact I would go so fat as to say \textbf{You should \textit{start} with a concept map and a table - Use tools like freemind to build them while you collect your sources }
+
+
+It is also a good idea to organize the work according to different features.
+Then present a table like \autoref{tab:work-compared}.   If  you end up with a very big table, you can print it in landscape mode like \autoref{tab:big-work-compared} on \autopageref{tab:big-work-compared}.
+
+\begin{table}[htbp]
+    \centering
+ \begin{threeparttable}
+    \caption[Short Title for List of Table]{A comparison of methods}
+    \label{tab:work-compared}
+    \begin{tabular}{lllll}
+        Approach                          & Feature & Feature & Feature & Feature \\ \hline
+        Method A~\cite{sample2019}&         &         &         &         \\
+        Method B~\cite{sample2019}&         &         &         &         \\
+        Method C~\cite{sample2019} &         &         &         &         \\ \hline
+    \end{tabular}
+    \begin{tablenotes}
+        \small
+        \item This is where authors provide additional information about
+        the data, including whatever notes are needed.
+        \item It is good for Dr. Femiani, who does not read the text first.
+    \end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+
+\begin{landscape}
+\begin{table}[]
+    \centering
+    \begin{threeparttable}
+        \caption[Short Title for List of Table]{A really wide comparison of methods}
+        \label{tab:big-work-compared}
+        \begin{tabular}{lllll}
+            Approach                   & Feature & Feature & Feature & Feature \\ \hline
+            Method A~\cite{sample2019}
+            & %Featur1
+            {\small Yes, Explain}
+            &% Feature2
+            {\small Partially, Explain }
+            &% Feature 3
+            {\small No, Explain}
+            &% Feature 4
+            {\small NA} \\
+            Method B~\cite{sample2019} &         &         &         &         \\
+            Method C~\cite{sample2019} &         &         &         &         \\ \hline
+        \end{tabular}
+        \begin{tablenotes}
+            \small
+            \item This is where authors provide additional information about
+            the data, including whatever notes are needed.
+            \item It is good for Dr. Femiani, who does not read the text first.
+        \end{tablenotes}
+    \end{threeparttable}
+\end{table}
+\end{landscape}
+
+
 
 \section{Background Topic 1}
 
 \section{Background Topic 2}
 
-\section{Related Work}
+\section{Discussion}
+
+Demonstrate a deep understanding of the work. Add to it by pointing out connections and relationships.
+
+\section{Conclusion}
+Concluse \textit{this chapter} by pointing out that there is still an important gap in the current state of the art.
